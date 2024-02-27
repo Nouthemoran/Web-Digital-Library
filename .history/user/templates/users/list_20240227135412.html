@@ -1,0 +1,52 @@
+{% extends 'base/base_admin.html' %}
+{% block title %} List Users {% endblock %}
+{% block content %}
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Daftar User</h1>
+                        <a href="" class="btn btn-primary float-end">Tambah Data</a>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Aladin-List-users
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID USER</th>
+                                            <th>USERNAME</th>
+                                            <th>EMAIL</th>
+                                            <th>NAMA LENGKAP</th>
+                                            <th>TGL REGISTER</th>
+                                            <th>ALAMAT</th>
+                                            <th>ACTION</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for user in users %}
+                                        <tr>
+                                            <td class="">{{ user.userid }}</td>
+                                            <td class="">{{ user.username }}</td>
+                                            <td class="">{{ user.email }}</td>
+                                            <td class="">{{ user.namalengkap }}</td>
+                                            <td class="">{{ user.date_joined }}</td>
+                                            <td class="">{{ user.alamat }}</td>
+                                            <td class="">
+                                                <a href="" class="btn btn-warning">Update</a>
+                                                <a href="" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        {% endfor %}
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                
+{% endblock %}

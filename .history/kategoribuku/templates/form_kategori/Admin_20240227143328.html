@@ -1,0 +1,24 @@
+{% extends 'base/base_admin.html' %}
+{% block title %} Create s {% endblock %}
+{% block content %} 
+<main id="main" class="main">
+  <div class="container-fluid px-4">
+      <h1 class="mt-4"> Form Tambah Buku</h1>
+      <div class="card mb-4">
+      <div class="card-body">
+        <div class="">
+              <!-- General Form Elements -->
+
+              <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Create</button>
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+      </div>
+  
+  </div>
+  </main><!-- End #main -->
+{% endblock %}
