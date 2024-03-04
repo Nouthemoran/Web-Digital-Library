@@ -1,0 +1,49 @@
+{% extends 'base/base_peminjam.html' %}
+{% block title %} Admin - List Buku {% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Daftar Buku</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Tables</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Aladin-List-admins
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>ID PEMINJAMAN</th>
+                            <th>PEMINJAM</th>
+                            <th>BUKU</th>
+                            <th>TANGGAL PEMINJAMAN</th>
+                            <th>TANGGAL PENGEMBALIAN</th>
+                            <th>STATUS PEMINJAMAN</th>
+                            <th>AC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pinjam in pinjams %}
+                        <tr>
+                            <td class="">{{ pinjam.peminjamanid }}</td>
+                            <td class="">{{ pinjam.userid }}</td>
+                            <td class="">{{ pinjam.bukuid }}</td>
+                            <td class="">{{ pinjam.tanggalpeminjaman }}</td>
+                            <td class="">{{ pinjam.tanggalpengembalian }}</td>
+                            <td class="">{{ pinjam.statuspeminjaman }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+                {% endblock %}

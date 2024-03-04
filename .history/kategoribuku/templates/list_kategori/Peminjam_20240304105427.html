@@ -1,0 +1,42 @@
+{% extends 'base/base_peminjam.html' %}
+{% block title %} Peminjam - List Buku {% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Daftar Buku</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Tables</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Aladin-List-kategoris
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>ID 
+                                
+                            </th>
+                            <th>PEMINJAM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for kategori in kategoris %}
+                        <tr>
+                            <td class="">{{ kategori.kategoriid }}</td>
+                            <td class="">{{ kategori.namakategori }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+                {% endblock %}
