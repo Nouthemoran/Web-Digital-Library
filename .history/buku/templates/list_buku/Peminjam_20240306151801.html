@@ -1,0 +1,53 @@
+{% extends 'base/base_peminjam.html' %}
+{% block title %} Peminjam - List Buku {% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Daftar Buku</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Tables</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Aladin-List-Books
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>ID BUKU</th>
+                            <th>JUDUL</th>
+                            <th>KATEGORI</th>
+                            <th>PENULIS</th>
+                            <th>PENERBIT</th>
+                            <th>TAHUN TERBIT</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for book in books %}
+                        <tr>
+                            <td class="">{{ book.bukuid }}</td>
+                            <td class="">{{ book.judul }}</td>
+                            <td class="">{{ book.kategoriid }}</td>
+                            <td class="">{{ book.penulis }}</td>
+                            <td class="">{{ book.penerbit }}</td>
+                            <td class="">{{ book.tahunterbit }}</td>
+                            <td class="">
+                                <a href="{% url 'Peminjaman:create' book.bukuid %}" class="btn btn-primary">Pilih buku</a>
+                                <a href="{% url 'Ulasanbuku:create' %}" class="btn btn-primary float-end">Ulasan</a>
+                            </td>
+                        {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+                {% endblock %}

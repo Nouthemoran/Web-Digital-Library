@@ -1,0 +1,26 @@
+{% extends 'base/base_peminjam.html' %}
+{% block title %} Ulasan Buku {% endblock %}
+{% block content %} 
+<main id="main" class="main">
+  <div class="container-fluid px-4">
+    <a href="{% url 'Kategoribuku:create' %}" class="btn btn-primary float-end">Tambah Data</a>
+
+      <h1 class="mt-4"> Form Ulasan Buku</h1>
+      <div class="card mb-4">
+      <div class="card-body">
+        <div class="">
+              <!-- General Form Elements -->
+
+              <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Publish</button>
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+      </div>
+  
+  </div>
+  </main><!-- End #main -->
+{% endblock %}
