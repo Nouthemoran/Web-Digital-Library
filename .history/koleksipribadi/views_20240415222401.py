@@ -18,7 +18,7 @@ def create_Koleksipribadi(request, bukuid):
         form = KoleksipribadiForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Koleksipribadi:koleksi-read')
+            return redirect('Koleksipribadi:read')
     else:
         form = KoleksipribadiForm(instance=bukuid)
     return render(request, 'form_Koleksi/Peminjam.html', {'form': form})

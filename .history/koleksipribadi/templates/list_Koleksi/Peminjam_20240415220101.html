@@ -13,7 +13,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Aladin-List-koleksis
+                Aladin-List-ulasans
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
@@ -21,15 +21,19 @@
                         <tr>
                             <th>ID</th>
                             <th>USER</th>
-                            <th>BUKU</th>
+                            <th>BUKU koleksi pribadi</th>
+                            <th>ULASAN</th>
+                            <th>RATING BUKU koleksi pribadi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for koleksi in koleksis %}
+                        {% for ulasan in ulasans %}
                         <tr>
-                            <td class="">{{ koleksi.koleksiid }}</td>
-                            <td class="">{{ koleksi.userid }}</td>
-                            <td class="">{{ koleksi.bukuid }}</td>
+                            <td class="">{{ ulasan.ulasanid }}</td>
+                            <td class="">{{ ulasan.userid }}</td>
+                            <td class="">{{ ulasan.bukuid }}</td>
+                            <td class="">{{ ulasan.ulasan }}</td>
+                            <td class="">{{ ulasan.rating }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

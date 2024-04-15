@@ -13,7 +13,7 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Aladin-List-koleksis
+                Aladin-List-szzs
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
@@ -25,11 +25,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for koleksi in koleksis %}
+                        {% for szz in koleksis %}
                         <tr>
-                            <td class="">{{ koleksi.koleksiid }}</td>
-                            <td class="">{{ koleksi.userid }}</td>
-                            <td class="">{{ koleksi.bukuid }}</td>
+                            <td class="">{{ szz.szzid }}</td>
+                            <td class="">{{ szz.userid }}</td>
+                            <td class="">{{ szz.bukuid }}</td>
+                            <td class="">{{ szz.szz }}</td>
+                            <td class="">{{ szz.rating }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

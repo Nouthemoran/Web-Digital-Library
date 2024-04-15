@@ -7,21 +7,20 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from buku.models import Buku
-
 def Koleksipribadi_list(request):
     koleksis = Koleksipribadi.objects.all()
     return render(request, 'list_Koleksi/Peminjam.html', {'koleksis': koleksis})
 
-def create_Koleksipribadi(request, bukuid):
+def create_Koleksipribadi(request):
     bukuid = get_object_or_404(Buku, bukuid=bukuid)
     if request.method == 'POST':
         form = KoleksipribadiForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('Koleksipribadi:koleksi-read')
+            return redirect('Koleksipribadi:read')
     else:
-        form = KoleksipribadiForm(instance=bukuid)
-    return render(request, 'form_Koleksi/Peminjam.html', {'form': form})
+        form = KoleksipribadiForm()
+    return render(request, 'form_Koleksi/Admin.html', {'form': form})
 
 def update_Koleksipribadi(request, Koleksiid):
     koleksipribadi = get_object_or_404(Koleksipribadi, Koleksiid=Koleksiid)

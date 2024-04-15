@@ -1,11 +1,11 @@
 {% extends 'base/base_peminjam.html' %}
-{% block title %} Peminjam - List Buku koleksi pribadi {% endblock %}
+{% block title %} Peminjam - List Buku pribadi {% endblock %}
 
 {% block content %}
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Daftar Buku koleksi pribadi</h1>
+        <h1 class="mt-4">Daftar Buku pribadi</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
             <li class="breadcrumb-item active">Tables</li>
@@ -13,23 +13,27 @@
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                Aladin-List-koleksis
+                Aladin-List-ulasans
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>ID ULASAN</th>
                             <th>USER</th>
-                            <th>BUKU</th>
+                            <th>BUKU pribadi</th>
+                            <th>ULASAN</th>
+                            <th>RATING BUKU pribadi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for koleksi in koleksis %}
+                        {% for ulasan in ulasans %}
                         <tr>
-                            <td class="">{{ koleksi.koleksiid }}</td>
-                            <td class="">{{ koleksi.userid }}</td>
-                            <td class="">{{ koleksi.bukuid }}</td>
+                            <td class="">{{ ulasan.ulasanid }}</td>
+                            <td class="">{{ ulasan.userid }}</td>
+                            <td class="">{{ ulasan.bukuid }}</td>
+                            <td class="">{{ ulasan.ulasan }}</td>
+                            <td class="">{{ ulasan.rating }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>

@@ -40,7 +40,7 @@
                             <td class="">
                                 <a href="{% url 'Peminjaman:create' book.bukuid %}" class="btn btn-primary">Pilih buku</a>
                                 <a href="{% url 'Ulasanbuku:ulasan-create' book.bukuid %}" class="btn btn-primary float-end">Ulasan</a>
-                                <a href="{% url 'Koleksipribadi:koleksi-create' book.bukuid %}" class="btn btn-primary float-end">+</a>
+                                <a href="{% url 'kol:ulasan-create' book.bukuid %}" class="btn btn-primary float-end">Ulasan</a>
                             </td>
                         {% endfor %}
                         </tr>
