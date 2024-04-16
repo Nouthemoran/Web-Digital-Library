@@ -33,14 +33,14 @@
                         <tr>
                             <td class="">{{ book.bukuid }}</td>
                             <td class="">{{ book.judul }}</td>
-                            <td class="">{{ book.kategoriid }}</td>
+                            <td class="">{{ book.kategoriid.namakategori }}</td>
                             <td class="">{{ book.penulis }}</td>
                             <td class="">{{ book.penerbit }}</td>
                             <td class="">{{ book.tahunterbit }}</td>
                             <td class="">
                                 <a href="{% url 'Peminjaman:create' book.bukuid %}" class="btn btn-primary">Pilih buku</a>
                                 <a href="{% url 'Ulasanbuku:ulasan-create' book.bukuid %}" class="btn btn-primary float-end">Ulasan</a>
-                                <a href="{% url 'Koleksipribadi:koleksi-create' book.bukuid %}" class="btn btn-primary float-end">+</a>
+                                <a href="{% url 'Koleksipribadi:koleksi-create' book.bukuid %}" class="btn btn-primary float-end m-1">+</a>
                             </td>
                         {% endfor %}
                         </tr>

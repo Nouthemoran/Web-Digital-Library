@@ -21,7 +21,6 @@
                         <tr>
                             <th>ID KATEGORI</th>
                             <th>NAMA KATEGORI</th>
-                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,9 +28,6 @@
                         <tr>
                             <td class="">{{ kategori.kategoriid }}</td>
                             <td class="">{{ kategori.namakategori }}</td>
-                            <td>
-                                <a href="{% url 'Kategoribuku:list_kategoribuku' kategori.kategoriid %}" class="btn btn-primary">poaoiso</a>
-                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>

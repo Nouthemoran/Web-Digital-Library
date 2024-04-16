@@ -8,6 +8,8 @@ from .form import RegistrationForm
 from .models import User
 from django.contrib.auth.models import Group
 from django.contrib.auth import logout
+from buku.models import Buku
+from kategoribuku.models import Kategoribuku
 
 class CustomLoginView(LoginView):
     template_name = 'auth/login.html'  
@@ -25,13 +27,17 @@ class CustomLoginView(LoginView):
 
 @login_required
 def admin_dashboard(request):
+    total_books = Buku.objects.count()
+    total_kategoris = Kategoribuku.objects.count()
     # Logika tampilan dashboard administrator
-    return render(request, 'dashboard/admin_dashboard.html')
+    return render(request, 'dashboard/admin_dashboard.html', {'total_books': total_books, 'total_kategoris': total_kategoris})
 
 @login_required
 def petugas_dashboard(request):
+    total_books = Buku.objects.count()
+    total_kategoris = Kategoribuku.objects.count()
     # Logika tampilan dashboard petugas
-    return render(request, 'dashboard/petugas_dashboard.html')
+    return render(request, 'dashboard/petugas_dashboard.html', {'total_books': total_books, 'total_kategoris': total_kategoris})
 
 @login_required
 def peminjam_dashboard(request):
