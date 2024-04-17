@@ -20,7 +20,7 @@ class CustomLoginView(LoginView):
             if user.groups.filter(name='petugas').exists():
                 return reverse('User:petugas_dashboard')  # Ganti 'staff_dashboard' dengan nama URL untuk dashboard petugas
             elif user.groups.filter(name='peminjam').exists():
-                return reverse('User:peminjam_dashboard')  # Ganti 'borrower_dashboard' dengan nama URL untuk dashboard peminjam
+                return reverse('User:peminjam-read')  # Ganti 'borrower_dashboard' dengan nama URL untuk dashboard peminjam
             elif user.groups.filter(name='admin').exists():
                 return reverse('User:admin_dashboard')  # Ganti 'admin_dashboard' dengan nama URL untuk dashboard administrator
     
@@ -40,9 +40,9 @@ def petugas_dashboard(request):
     return render(request, 'dashboard/petugas_dashboard.html', {'total_books': total_books, 'total_kategoris': total_kategoris})
 
 @login_required
-def peminjam_dashboard(request):
-    # Logika tampilan dashboard peminjam
-    return render(request, 'dashboard/peminjam_dashboard.html')
+def Peminjam_buku_list(request):
+    books = Buku.objects.all()
+    return render(request, 'list_buku/Peminjam.html', {'books': books})
 
 def register(request):
     if request.method == 'POST':

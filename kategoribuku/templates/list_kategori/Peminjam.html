@@ -5,17 +5,20 @@
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Daftar Buku</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-            <li class="breadcrumb-item active">Tables</li>
-        </ol>
-        <div class="card mb-4">
-            <div class="card-header">
+        <div class="card mb-4" style="margin-top: 50px; background-color: rgba(14, 70, 163, 0.2); backdrop-filter: blur(10px);">
+            <h1 class="mt-4 px-4" style="color: #FFFFFF;">Daftar Buku</h1>
+            <ol class="breadcrumb mb-4 px-4" style="background-color: rgba(14, 70, 163, 0.0); color: #FFFFFF;">
+                <li class="breadcrumb-item "><a href="{% url 'Buku:read' %}" style="color: #FFFFFF;">Daftar buku</a></li>
+                <li class="breadcrumb-item active" style="color: #FFFFFF;">Tables</li>
+            </ol>
+        </div>
+        <div class="card mb-4" >
+            <div class="card-header" style="background-color: #9AC8CD;">
                 <i class="fas fa-table me-1"></i>
-                Aladin-List-kategoris
+                Buku-buku yg tersedia: 
             </div>
-            <div class="card-body">
+            
+            <div class="card-body" style="background-color: rgba(225, 247, 245, 0.9);">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>

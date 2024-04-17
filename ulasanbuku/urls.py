@@ -7,7 +7,7 @@ urlpatterns = [
     # Peminjam roles
     path('ulasanbuku/create/<str:bukuid>/', views.create_Ulasanbuku, name='ulasan-create'),
     path('ulasanbuku/list/', views.Ulasanbuku_list, name='ulasan-read'),
-    path('ulasanbuku/update/<str:koleksiid>/', views.update_Ulasanbuku, name='update'),
-    path('ulasanbuku/delete/<str:Koleksiid>/', views.delete_Ulasanbuku, name='delete'),
+    path('ulasanbuku/update/<str:ulasanid>/', views.update_Ulasanbuku, name='ulasan-update'),
+    path('ulasanbuku/delete/<str:ulasanid>/', views.delete_Ulasanbuku, name='ulasan-delete'),
 
 ]

@@ -17,9 +17,7 @@ def Buku_list(request):
     books = Buku.objects.all()
     return render(request, 'list_buku/Admin.html', {'books': books})
 
-def Peminjam_buku_list(request):
-    books = Buku.objects.all()
-    return render(request, 'list_buku/Peminjam.html', {'books': books})
+
 
 def create_Buku(request):
     if request.method == 'POST':

@@ -4,7 +4,7 @@
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Daftar User</h1>
-                        <a href="" class="btn btn-primary float-end">Tambah Data</a>
+                        <a href="{% url 'User:register' %}" class="btn btn-primary float-end">Tambah Data</a>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tables</li>
@@ -24,7 +24,7 @@
                                             <th>NAMA LENGKAP</th>
                                             <th>TGL REGISTER</th>
                                             <th>ALAMAT</th>
-                                            <th>ACTION</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -36,10 +36,7 @@
                                             <td class="">{{ user.namalengkap }}</td>
                                             <td class="">{{ user.date_joined }}</td>
                                             <td class="">{{ user.alamat }}</td>
-                                            <td class="">
-                                                <a href="" class="btn btn-warning">Update</a>
-                                                <a href="" class="btn btn-danger">Delete</a>
-                                            </td>
+                                            
                                         </tr>
                                         {% endfor %}
                                     </tbody>

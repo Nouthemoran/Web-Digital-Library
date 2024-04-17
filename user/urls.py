@@ -13,8 +13,10 @@ urlpatterns = [
     # Path untuk dashboard
     path('admin-dashboard/', views.admin_dashboard, name='admin_dashboard'),
     path('petugas-dashboard/', views.petugas_dashboard, name='petugas_dashboard'),
-    path('peminjam-dashboard/', views.peminjam_dashboard, name='peminjam_dashboard'),
 
     # Path untuk User data
-    path('user/list/', views.User_list, name='read')
+    path('user/list/', views.User_list, name='read'),
+
+        # Peminjam roles
+    path('peminjam/buku/list/', views.Peminjam_buku_list, name='peminjam-read'),
 ]

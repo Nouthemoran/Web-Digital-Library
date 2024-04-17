@@ -1,21 +1,24 @@
 {% extends 'base/base_peminjam.html' %}
-{% block title %} Peminjam - List Buku {% endblock %}
+{% block title %} Peminjam - Ulasan Buku {% endblock %}
 
 {% block content %}
 
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Daftar Buku</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-            <li class="breadcrumb-item active">Tables</li>
-        </ol>
-        <div class="card mb-4">
-            <div class="card-header">
+        <div class="card mb-4" style="margin-top: 50px; background-color: rgba(14, 70, 163, 0.2); backdrop-filter: blur(10px);">
+            <h1 class="mt-4 px-4" style="color: #FFFFFF;">Koleksi Pribadi</h1>
+            <ol class="breadcrumb mb-4 px-4" style="background-color: rgba(14, 70, 163, 0.0); color: #FFFFFF;">
+                <li class="breadcrumb-item "><a href="{% url 'User:peminjam-read' %}" style="color: #FFFFFF;">Daftar buku</a></li>
+                <li class="breadcrumb-item active" style="color: #FFFFFF;">Koleksi pribadi</li>
+            </ol>
+        </div>
+        <div class="card mb-4" >
+            <div class="card-header" style="background-color: #9AC8CD;">
                 <i class="fas fa-table me-1"></i>
-                Aladin-List-ulasans
+                Buku-buku yg tersedia: 
             </div>
-            <div class="card-body">
+            
+            <div class="card-body" style="background-color: rgba(225, 247, 245, 0.9);">
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
@@ -24,6 +27,7 @@
                             <th>BUKU</th>
                             <th>ULASAN</th>
                             <th>RATING BUKU</th>
+                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,6 +38,11 @@
                             <td class="">{{ ulasan.bukuid.judul }}</td>
                             <td class="">{{ ulasan.ulasan }}</td>
                             <td class="">{{ ulasan.rating }}</td>
+                            <td>
+                                <a href="{% url 'Ulasanbuku:ulasan-update' ulasan.ulasanid %}" class="btn btn-warning">Update</a>
+                                <a href="{% url 'Ulasanbuku:ulasan-delete' ulasan.ulasanid %}" class="btn btn-danger">Delete</a>
+                        
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>

@@ -13,11 +13,24 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <style>
+            #layoutSidenav_content {
+                background-image: url("{% static 'img/bg_warna.jpg' %}");
+                /* Adjust background properties as needed */
+                background-size: cover;
+                background-position: center;
+            }
+
+            #sidenavAccordion {
+                background-color: rgba(30, 3, 66, 0.8); /* Nilai alpha diatur ke 0.8 */
+                
+        }
+        </style>
     </head>
-    <body class="sb-nav-fixed">
+    <body class="sb-nav-fixed" style="background-color: E1F7F5">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="{% url 'User:peminjam_dashboard' %}">ALADIN LIBRARY</a>
+            <a class="navbar-brand ps-3" href="{% url 'User:peminjam-read' %}">ALADIN LIBRARY</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -58,8 +71,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{% url 'Buku:peminjam-read' %}">Daftar Buku</a>
-                                    <a class="nav-link" href="{% url 'Kategoribuku:kategori-read' %}">Kategori Buku</a>
+                                    <a class="nav-link" href="{% url 'User:peminjam-read' %}">Daftar Buku</a>
+                                    <!-- <a class="nav-link" href="{% url 'Kategoribuku:kategori-read' %}">Kategori Buku</a> -->
                                     <a class="nav-link" href="{% url 'Koleksipribadi:koleksi-read' %}">Koleksi Pribadi</a>
                                     <a class="nav-link" href="{% url 'Ulasanbuku:ulasan-read' %}">Ulasan Buku</a>
                                 </nav>
